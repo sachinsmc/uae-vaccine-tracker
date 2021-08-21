@@ -1,10 +1,8 @@
 name: Go
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  schedule:
+    - cron: '30 20 * * *'
 
 jobs:
 
@@ -22,5 +20,10 @@ jobs:
       run: go build -v ./...
 
     - name: Run
+      env: 
+        ACCESS_SECRET: ${{ secrets.ACCESS_SECRET }}
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        CONSUMER_KEY: ${{ secrets.CONSUMER_KEY }}
+        CONSUMER_SECRET: ${{ secrets.CONSUMER_SECRET }}
       run: go run main.go
 
