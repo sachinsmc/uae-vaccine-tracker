@@ -51,6 +51,7 @@ func main() {
 		log.Fatal(err)
 	}
 	var vaccinations Vaccinations
+	defer resp.Body.Close()
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		log.Fatal(err)
