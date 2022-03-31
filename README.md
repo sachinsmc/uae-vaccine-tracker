@@ -8,4 +8,4 @@ Represents fully vaccinated people, as a percentage of all people.
 
 Bot : https://twitter.com/uae_vaccine
 
-Source : Our World in Data 
+Source : Our World in Data.
