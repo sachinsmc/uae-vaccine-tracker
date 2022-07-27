@@ -69,6 +69,9 @@ func main() {
 				peopleFullyVaccinated = getLatestData(vaccination.Data)
 				fullyVaccinated = peopleFullyVaccinated * 20 / 100
 			}
+			if fullyVaccinated > 20 {
+				fullyVaccinated = 20
+			}
 			tweetStr := vaccination.Country + " \n " + strings.Repeat("▓", int(math.Round(fullyVaccinated))) + strings.Repeat("░", int(math.Round(20-fullyVaccinated))) + " " + fmt.Sprintf("%.2f", peopleFullyVaccinated) + "%"
 			fmt.Println(tweetStr)
 			tweet(tweetStr)
